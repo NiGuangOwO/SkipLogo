@@ -4,7 +4,7 @@ using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 
-namespace SamplePlugin;
+namespace SkipLogo;
 
 public sealed class Plugin : IDalamudPlugin
 {
@@ -21,7 +21,7 @@ public sealed class Plugin : IDalamudPlugin
         var value = stackalloc AtkValue[1];
         value->Type = ValueType.Int;
         value->Int = 0;
-        addon->FireCallback(1, value, (void*)1);
+        addon->FireCallback(1, value, true);
         addon->Hide(false, false, 1);
     }
 
